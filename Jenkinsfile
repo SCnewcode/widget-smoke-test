@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'npm install'
+                sh 'npx cypress run --spec cypress/e2e/widget-floy-tests/test.widget.cy.js --config-file cypress.test.config.js --env environment=development' 
+            }
+        }
+    }
+}
