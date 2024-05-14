@@ -5,7 +5,7 @@ pipeline {
         stage('Build') { 
             steps {
                
-                sh 'npx cypress run --spec cypress/e2e/widget-floy-tests/test.widget.cy.js --config-file cypress.test.config.js --env environment=development' 
+                sh 'npm run cypress-test' 
             }
         }
     }
