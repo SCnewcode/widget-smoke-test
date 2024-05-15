@@ -8,14 +8,14 @@ pipeline {
       
    }
     stages {
-        // stage('Dependacy Install') {
-        //     steps {
-        //         bat 'npm i'
-        //     }
-        // }
+        stage('Dependacy Install') {
+            steps {
+                sh 'npm install cypress'
+            }
+        }
         stage('Running Test Script') {
             steps {
-                bat 'npm run cypress-test'
+                sh 'npm run cypress-test'
             }
         }
     }   
