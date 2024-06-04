@@ -22,6 +22,8 @@ export class WidgetElements {
 
         btnRegularClass: () => cy.get("[class='btn btn-regular']"),
 
+        btnRegularClassInPersonalInfo: () => cy.get('.p-dialog-footer').find('button[type="button"]'),
+
 
         toastNificationError: () => cy.get(".Vue-Toastification__toast.Vue-Toastification__toast--error.top-right"),
 
@@ -69,11 +71,55 @@ export class WidgetElements {
 
         orderCongratulationBookingFind: ()  =>    cy.get('.order-congratulation__booking-buttons').find('button[class="btn btn-secondary"]')  ,
 
+        paymentSystemFind: ()  =>   cy.get('.eticket-payment'),
+
+
+        basketTicketPersonalInfoFind: ()  =>   cy.get('.basket-ticket__personal-info-icon'),
+      
+        personalInfoDialogModal: ()  => cy.get("[class='p-dialog p-component p-ripple-disabled personal-data-form']"),
+
+        personalInformationFieldsFind: ()  => cy.get('.p-float-label').find('input[data-pc-name="inputtext"]'),
+
+        ticketsInUserOrdersPage: ()  =>   cy.get("[class='btn btn-plain']"),
+
+        btnEditPersonalInfoOrders: ()  =>   cy.get("[class='btn btn-edit-personal-info']"),
+
         successMessages: '.Vue-Toastification__toast.Vue-Toastification__toast--success.top-right'
 
 
     }
 
+
+
+
+    clickOnTicketsInOrdersPage() {
+        this.elements.ticketsInUserOrdersPage().first().click()
+    }
+
+    
+    clickBtnEditPersonalInfo() {
+        this.elements.btnEditPersonalInfoOrders().click()
+    }
+
+
+    personalInfoDialogModalVisible() {
+        return this.elements.personalInfoDialogModal()
+    }
+
+
+    clickBasketTicketPersonalInfo() {
+        this.elements.basketTicketPersonalInfoFind().click()
+    }
+
+  
+    findPersonalInfoFields() {
+        return this.elements.personalInformationFieldsFind()
+    }
+
+
+    findpaymentSystemCheckout() {
+        return this.elements.paymentSystemFind()
+    }
 
 
     orderCongratulationBookingClick() {
@@ -165,6 +211,14 @@ export class WidgetElements {
 
     checkErroBoxTextVisible() {
         this.elements.errorBox().should("be.visible").and("contain", "Phone format is invalid.")
+    }
+
+    checkErroBoxOnPersonalInfo() {
+        return this.elements.errorBox()
+    }
+
+    clickBtnRegularPersonalInfo() {
+        this.elements.btnRegularClassInPersonalInfo().click()
     }
 
     checkClearAndAddPhoneNumber() {

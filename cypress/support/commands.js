@@ -33,7 +33,7 @@
 const { MailSlurp } = require("mailslurp-client");
 
 
-const apiKey = "a832277bdb821b98da69d1c3bbbbc58db8daa72c7f0f2c944d429183a49e6c9f";// or Cypress.env("API_KEY")
+const apiKey = "a4b806078287db33a34474113799045ffd3640d39112a87e1a579057ac05f6a0";// or Cypress.env("API_KEY")
 const mailslurp = new MailSlurp({ apiKey });
 
 Cypress.Commands.add("createInbox", () => {
@@ -58,6 +58,11 @@ Cypress.Commands.add("createInbox", () => {
     // };
       return mailslurp.waitForLatestEmail(inboxId );
  
+  });
+
+
+  Cypress.Commands.add("deleteInbox", (inboxId) => {
+    return mailslurp.deleteInbox(inboxId);
   });
 
 

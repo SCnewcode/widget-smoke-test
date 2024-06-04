@@ -10,6 +10,7 @@ module.exports = defineConfig({
   
   e2e: {
     // testIsolation: true,
+    // chromeWebSecurity: false,
     setupNodeEvents(on, config) {},
   },
   env: {

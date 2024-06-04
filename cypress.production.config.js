@@ -9,6 +9,7 @@ module.exports = defineConfig({
   // experimentalSessionAndOrigin: false,
   e2e: {
     // testIsolation: true,
+    // chromeWebSecurity: false,
     setupNodeEvents(on, config) {},
     // baseUrl: "https://widget.mticket.com.ua",
     // prod: {
