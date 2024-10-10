@@ -1,2 +1,2 @@
 # widget-smoke-test
-aqa sypress tests
+aqa Cypress tests
